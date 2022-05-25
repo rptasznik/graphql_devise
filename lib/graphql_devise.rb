@@ -6,10 +6,10 @@ require 'graphql'
 require 'devise_token_auth'
 require 'zeitwerk'
 
-if Gem::Version.new(GraphQL::VERSION) < Gem::Version.new('2.0')
+#if Gem::Version.new(GraphQL::VERSION) < Gem::Version.new('2.0')
   GraphQL::Field.accepts_definitions(authenticate: GraphQL::Define.assign_metadata_key(:authenticate))
   GraphQL::Schema::Field.accepts_definition(:authenticate)
-end
+#end
 
 loader = Zeitwerk::Loader.for_gem
 
